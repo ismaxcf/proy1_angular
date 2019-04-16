@@ -1,0 +1,23 @@
+<div>
+  <h2 style="text-align: center">Usuarios</h2>
+  <div>
+    <ul class="Usuarios">
+      <li *ngFor="let User of users" 
+          [class.selected]="User === selectedUser"
+          (click)="onSelect(User)">
+        <span class="badge">{{User.DNI}}</span>{{User.Name}}
+      </li>
+    </ul>
+    <button (click)="showFormNU()">AddUser</button>
+    <div *ngIf="formNewUser">
+      <h4>New User</h4>
+      <form (submit)="addUser(newUserName, newUserDni, newUserAge)">
+        Name: <input type="text" #newUserName>
+        DNI: <input type="text" #newUserDni>
+        Age: <input type="number" #newUserAge>
+        <button>Add user</button>
+      </form>
+    </div>
+  </div>
+  <app-user-detail [User]="selectedUser"></app-user-detail>
+</div>

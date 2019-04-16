@@ -1,0 +1,14 @@
+<div *ngIf="User">
+    <h2>{{User.Name}} Detalles</h2>
+    <div>
+      <span ><b>DNI :</b></span>{{User.DNI}}
+    </div>
+    <div>
+      <label>name:
+        <input [(ngModel)]="User.Name" placeholder="name"/>
+      </label><br>
+      <label>Age:
+        <input [(ngModel)]="User.Age" placeholder="age"/>
+      </label>
+    </div>  
+</div>
